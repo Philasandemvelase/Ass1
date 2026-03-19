@@ -17,6 +17,8 @@ public class PlaceExperiment
 
     public static void main(String[] args) throws IOException
     {
+        Locale.setDefault(Locale.US); // To make decimal be xx.x instead of xx,x
+        
         PlaceExperiment main = new PlaceExperiment();
 
         main.load();
