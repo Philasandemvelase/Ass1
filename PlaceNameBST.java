@@ -115,6 +115,21 @@ public class PlaceNameBST
         fileScanner.close();
     }   
     
+    public void putFromArray(PlaceNameEntry[] items, int values)
+    {
+        data = null;
+        left = null;
+        right = null;
+        
+        for (int i = 0; i < values && i < items.length; i++)
+        {
+            if (items[i] != null && !contains(items[i].getPlaceName()))
+            {
+                insert(items[i]);
+            }
+        }
+    }
+    
     public PlaceNameEntry search(String name)
     {
         comparisons = 0;
