@@ -1,5 +1,10 @@
-// A class to store the records in the arrray
-// mvlphi006
+/**
+* Stores PlaceNameEntry records in an unsorted array.
+* Supports linear search with comparison counting.
+*
+* @author mvlphi006
+*/
+
 import java.util.Scanner;
 import java.io.*;
 
@@ -8,6 +13,11 @@ public class PlaceNameArray
     private PlaceNameEntry[] records;
     private int numRecords;
     private int comparisons;
+    
+    /**
+    * Construct a PlaceNameArray with a given capacity.
+    * @param N the maximum number of records to store
+    */
 
     public PlaceNameArray(int N)
     {
@@ -16,10 +26,20 @@ public class PlaceNameArray
         comparisons = 0;
     }
     
+    /**
+    * Returns the number of comparisons made in the last search.
+    * @return the comparison count
+    */
     public int getComparisons()
     {
         return comparisons;
     }
+    
+    /** 
+    * Checks if a place name already exists in the array.
+    * @param placeName the place name to check
+    * @return true if found, false otherwise
+    */
     public boolean contains(String placeName)
     {
       for (int i = 0; i < numRecords; i++)
@@ -32,6 +52,12 @@ public class PlaceNameArray
       return false;
     }
     
+    /**
+    * Loads place records from a csv file into the array.
+    * @param filename the path to the csv file
+    * @param nodes the maximum number of records to load
+    * @throws FileNotFoundException if the file does not exist
+    */
     public void putFromFile(String filename, int nodes) throws FileNotFoundException
     {
       numRecords = 0;
@@ -60,7 +86,26 @@ public class PlaceNameArray
       
     }
     
+    /**
+    * @param items the source array of PlaceNameEntry records
+    * @param values the number of records to load
+    */
+    public void putFromArray(PlaceNameEntry[] items, int values)
+    {
+        numRecords = 0;
+        for (int i = 0; i < values && i < items.length; i++)
+        {
+            if (items[i] != null && !contains(items[i].getPlaceName()))
+            {
+                records[numRecords++] = items[i];
+            }
+        }
+    }
     
+    /** 
+    * @param name the place name to search for
+    * @return the matching PlaceNameEntry, or null if not found
+    */
     public PlaceNameEntry search(String name)
     {
     

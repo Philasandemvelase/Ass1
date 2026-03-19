@@ -1,6 +1,8 @@
-// Store records on the Unbalanced BST
-// MVLPHI006
-// 06 March 2026
+/**
+* Store records on the Unbalanced BST
+* @author mvlphi006
+*/
+
 import java.io.*;
 import java.util.Scanner;
 
@@ -19,23 +21,42 @@ public class PlaceNameBST
         comparisons = 0;
     }
 
+    /**
+    * @return the left child node
+    */
     public PlaceNameEntry getData()
     {
         return data;
     }
+    
+    /**
+    * @return the left child node
+    */
     public PlaceNameBST getLeft()
     {
         return left;
     }
+    
+    /**
+    * @return the right child node
+    */ 
     public PlaceNameBST getRight()
     {
         return right;
     }
+    
+    /**
+    * @return the comparison count
+    */
     public int getComparisons()
     {
         return comparisons;
     }
     
+    /**
+    * @param placeName the place name to check
+    * @return true if found, false otherwise
+    */
     public boolean contains(String placeName)
     {
         if (data == null)
@@ -57,6 +78,9 @@ public class PlaceNameBST
         }
     }
     
+    /**
+    * @param entry the entry to insert
+    */
     public void insert(PlaceNameEntry entry)
     {
         if (data == null)
@@ -80,6 +104,11 @@ public class PlaceNameBST
         }
     }
     
+    /**
+    * @param filename the path to the csv file
+    * @param nodes the maximum number of records to load
+    * @throws FileNotFoundException if not found
+    */
     public void putFromFile(String filename, int nodes) throws FileNotFoundException
     {
         data = null;
@@ -115,6 +144,10 @@ public class PlaceNameBST
         fileScanner.close();
     }   
     
+    /**
+    * @param items the source array of PlaceNameEntry records
+    * @param values the number of records to load
+    */
     public void putFromArray(PlaceNameEntry[] items, int values)
     {
         data = null;
@@ -130,6 +163,10 @@ public class PlaceNameBST
         }
     }
     
+    /**
+    * @param name the place name to search for
+    * @return the matching PlaceNameEntry, or null if not found
+    */
     public PlaceNameEntry search(String name)
     {
         comparisons = 0;
@@ -139,6 +176,11 @@ public class PlaceNameBST
         return result;
     }
     
+    /**
+    * @param name the place name to search
+    * @param counter an array used to track comparison count
+    * @return the matching PlaceNameEntry, or null if not found
+    */
     public PlaceNameEntry searchMethod(String name, int[] counter)
     {
         if (data == null) return null;

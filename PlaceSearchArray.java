@@ -1,5 +1,9 @@
-// An interactive application that provides a text based menu
-// mvlphi006
+/**
+* An interactive application that provides a text based menu
+*
+*@author mvlphi006
+*/
+
 import java.util.Scanner;
 import java.io.*;
 
@@ -8,6 +12,9 @@ public class PlaceSearchArray
     Scanner scanner;
     PlaceNameArray array;
     
+    /**
+    @param args command line arguments
+    */
     public static void main(String[] args)
     {
         PlaceSearchArray main = new PlaceSearchArray();

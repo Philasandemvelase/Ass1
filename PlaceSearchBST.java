@@ -1,6 +1,8 @@
-// An interactive clss that provides a text based menu using BST
-// mvlphi006
-// 12 March 2026
+/**
+* An interactive clss that provides a text based menu using BST
+*
+* @author mvlphi006
+*/
 
 import java.util.Scanner;
 import java.io.*;
@@ -9,7 +11,10 @@ public class PlaceSearchBST
 {
     Scanner scanner;
     PlaceNameBST bst;
-
+   
+    /**
+    * @param args command line arguments
+    */
     public static void main(String[] args)
     {
         PlaceSearchBST main = new PlaceSearchBST();

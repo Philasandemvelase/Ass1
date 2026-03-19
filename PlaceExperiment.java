@@ -1,6 +1,8 @@
-// A class to compare practice perfomance of the data structures to the theoritical prediction
-// mvlphi006
-// 13 March 2026
+/**
+* A class to compare practice perfomance of the data structures to the theoritical prediction
+*
+* @author mvlphi006
+*/
 
 import java.util.*;
 import java.io.*;
@@ -14,7 +16,10 @@ public class PlaceExperiment
     private String[] queries;
     private int records;
 
-
+    /**
+    * @param args command line arguments
+    * @throws IOException if data files cannot read
+    */
     public static void main(String[] args) throws IOException
     {
         Locale.setDefault(Locale.US); // To make decimal be xx.x instead of xx,x
@@ -50,6 +55,9 @@ public class PlaceExperiment
         }
     }
 
+    /**
+    * @throws FileNotFoundException if any required data file is not found
+    */
     public void load() throws FileNotFoundException
     {
         int max = 10000;
@@ -125,6 +133,10 @@ public class PlaceExperiment
          
     }
     
+    /**
+    * @param array the PlaceNameArray to search in
+    * @return the average number of comparisons per query
+    */
     public double averageComp(PlaceNameArray array)
     {
         double total = 0;
@@ -136,6 +148,10 @@ public class PlaceExperiment
         return (double) total / queries.length;
     }
     
+    /**
+    * @param bst the PlaceNameBST to search in
+    * @return the average number of comparisons per query
+    */
     public double averageComp(PlaceNameBST bst)
     {
         double total = 0;
