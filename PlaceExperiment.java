@@ -7,12 +7,12 @@ import java.io.*;
 
 public class PlaceExperiment
 {
-    int[] N = {1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000};
-    PlaceNameEntry[] asIs;
-    PlaceNameEntry[] sorted;
-    PlaceNameEntry[] optimal;
-    String[] queries;
-    int records;
+    private int[] N = {1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000};
+    private PlaceNameEntry[] asIs;
+    private PlaceNameEntry[] sorted;
+    private PlaceNameEntry[] optimal;
+    private String[] queries;
+    private int records;
 
 
     public static void main(String[] args) throws IOException
